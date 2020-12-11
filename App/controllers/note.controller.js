@@ -10,9 +10,15 @@ exports.create = (req, res) => {
 
     // Create a Note
     const note = new Note({
-        name: req.body.name || "UnName Note",
-        salary: req.body.salary,
-        age: req.body.age
+        email: req.body.email || "UnName Note",
+        password: req.body.password,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        phone: req.body.phone,
+        age: req.body.age,
+        address: req.body.address,
+        gender: req.body.gender,
+        country: req.body.country
     });
 
     // Save Note in the database
@@ -28,6 +34,16 @@ exports.create = (req, res) => {
 
 // Retrieve and return all notes from the database.
 exports.findAll = (req, res) => {
+    Note.find({email: req.body.email, password: req.body.password })
+        .then(notes => {
+            res.send(notes);
+        }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving notes."
+        });
+    });
+};
+exports.login = (req, res) => {
     Note.find({})
         .then(notes => {
             res.send(notes);
@@ -37,7 +53,6 @@ exports.findAll = (req, res) => {
         });
     });
 };
-
 // Find a single note with a noteId
 exports.findOne = (req, res) => {
     Note.findById(req.params.noteId)
@@ -71,9 +86,15 @@ exports.update = (req, res) => {
 
     // Find note and update it with the request body
     Note.findByIdAndUpdate(req.params.noteId, {
-        name: req.body.name || "UnName Note",
-        salary: req.body.salary,
-        age: req.body.age
+        email: req.body.email || "UnName Note",
+        password: req.body.password,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        phone: req.body.phone,
+        age: req.body.age,
+        address: req.body.address,
+        gender: req.body.gender,
+        country: req.body.country
     }, {new: true})
         .then(note => {
             if(!note) {

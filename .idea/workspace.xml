@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="66d5da64-abd4-4340-bbfa-7a624137bdf7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/App/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/users/controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/users/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/users/model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/users/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/note.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/note.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/models/note.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/models/note.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/routes/note.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/routes/note.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lSh95gqi6VredqjJwe2fsDKfm3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/App/users" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Rest-Api-\App\users" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66d5da64-abd4-4340-bbfa-7a624137bdf7" name="Default Changelist" comment="" />
+      <created>1607596244473</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607596244473</updated>
+      <workItem from="1607596245606" duration="1089000" />
+      <workItem from="1607599341726" duration="24459000" />
+    </task>
+    <task id="LOCAL-00001" summary="create a server and api">
+      <created>1607596307933</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607596307933</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create a server and api" />
+    <option name="LAST_COMMIT_MESSAGE" value="create a server and api" />
+  </component>
+</project>
