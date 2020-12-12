@@ -12,7 +12,7 @@ router.put("/:id", controller.update);
 
 router.get("/:id", controller.findUserId);
 
-router.delete("/:id", controller.delete);
+router.put("/isActive/:id", controller.delete);
 
 router.post("/login", controller.login);
 

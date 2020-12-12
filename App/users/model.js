@@ -11,7 +11,8 @@ const User = new Schema({
     gender: String,
     country: String,
     email: String,
-    password: String
+    password: String,
+    isActive : Boolean
 }, {
     timestamps: true,
 });

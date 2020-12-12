@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const Users = require('./model');
 
 // Create and Save a new user
@@ -7,7 +8,7 @@ exports.create = (req, res) => {
             message: "user content can not be empty"
         });
     }
-
+    req.body.password = bcrypt.hashSync(req.body.password , 8)
     // Create a user
     const user = new Users({
         email: req.body.email || "UnName user",
@@ -18,7 +19,8 @@ exports.create = (req, res) => {
         age: req.body.age,
         address: req.body.address,
         gender: req.body.gender,
-        country: req.body.country
+        country: req.body.country,
+        isActive: req.body.isActive
     });
 
     // Save user in the database
@@ -44,12 +46,17 @@ exports.findAll = (req, res) => {
     });
 };
 exports.login = (req, res) => {
-    Users.findOne({ email: req.body.email, password: req.body.password })
+    Users.findOne({ email: req.body.email })
         .then(login => {
-            res.send(login);
+            const isMatch =  bcrypt.compareSync(req.body.password, login.password); // true
+            if(isMatch){
+                return  res.send(login);
+            }else {
+                return  res.status(500).send({message: "Password is not match"});
+            }
         }).catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occurred while retrieving users."
+            message: err.message || "Some error occurred while retrieving login."
         });
     });
 };
@@ -87,6 +94,7 @@ exports.findUserId = (req, res) => {
 // Update a user identified by the id in the request
 exports.update = (req, res) => {
     // Validate Request
+
     if(!req.body) {
         return res.status(400).send({
             message: "user content can not be empty"
@@ -105,6 +113,7 @@ exports.update = (req, res) => {
         gender: req.body.gender,
         country: req.body.country
     }, {new: true})
+        // Users.updateOne(_id : req.params.id ,{ $set (isActive : req.body.isActive)})
         .then(user => {
             if(!user) {
                 return res.status(404).send({
@@ -126,22 +135,28 @@ exports.update = (req, res) => {
 
 // Delete a user with the specified id in the request
 exports.delete = (req, res) => {
-    Users.findByIdAndRemove(req.params.id)
+    if(!req.body) {
+        return res.status(400).send({
+            message: "User content can not be empty"
+        });
+    }
+    Users.updateOne({_id: req.params.id},  { $set: { isActive: req.body.isActive}})
         .then(user => {
+            console.log(user)
             if(!user) {
                 return res.status(404).send({
-                    message: "user not found with id " + req.params.id
+                    message: "Users not found with id " + req.params.id
                 });
             }
-            res.send({message: "user deleted successfully!"});
+            res.send({message: "Users deleted successfully!"},user);
         }).catch(err => {
         if(err.kind === 'ObjectId' || err.name === 'NotFound') {
             return res.status(404).send({
-                message: "user not found with id " + req.params.id
+                message: "Users not found with id " + req.params.id
             });
         }
         return res.status(500).send({
-            message: "Could not delete user with id " + req.params.id
+            message: "Could not delete Users with id " + req.params.id
         });
     });
 };
